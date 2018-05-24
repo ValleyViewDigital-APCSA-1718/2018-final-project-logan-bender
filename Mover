@@ -1,0 +1,18 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Need to find parameter for While loop to keep cars running while game is going
+ * Need to write code to allow cars to move to the right edge, flip 180 and move to left and flip, repeat.
+ * 
+ */
+public class Mover extends Actor
+{
+    /**
+     * Act - do whatever the Mover wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
+    public void act() 
+    {
+        
+    }    
+}
