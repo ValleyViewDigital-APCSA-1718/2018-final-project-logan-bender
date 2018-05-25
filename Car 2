@@ -8,12 +8,25 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class var2 extends Mover
 {
-    /**
-     * Act - do whatever the var2 wants to do. This method is called whenever
+     /**
+     * Act - do whatever the car1 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
+   {
+       move(speed2);
+       turnAtEdge();
+       
+       
+   
+   }
+   
+   public void turnAtEdge()
     {
-        // Add your action code here.
-    }    
+        if(atWorldEdge() )
+        {
+             turn(180);
+        }
+    } 
 }
+
