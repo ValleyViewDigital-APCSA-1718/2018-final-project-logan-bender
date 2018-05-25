@@ -14,6 +14,7 @@ public class Goal extends Mover
      */
     public void act() 
     {
-        // Add yourint x = getX();
-    }
+        goalReach();
+    }    
 }
+
