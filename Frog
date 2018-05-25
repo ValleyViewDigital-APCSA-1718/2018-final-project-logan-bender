@@ -18,19 +18,20 @@ public class Frog extends Mover
  
         if(Greenfoot.isKeyDown("left"))
        {
-         setLocation(getX()-3, getY());
+         setLocation(getX()-5, getY());
        }
         else if(Greenfoot.isKeyDown("right"))
        {
-         setLocation(getX()+3, getY());
+         setLocation(getX()+5, getY());
        } 
        else if (Greenfoot.isKeyDown("up"))
        {
-          setLocation(getX(), getY()-3);
+          setLocation(getX(), getY()-5);
         }
         else if (Greenfoot.isKeyDown("down"))
        {
-          setLocation(getX(), getY()+3);
+          setLocation(getX(), getY()+5);
         }
     }    
 }
+
