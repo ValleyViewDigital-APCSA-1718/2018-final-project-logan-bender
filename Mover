@@ -7,16 +7,13 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Mover extends Actor
 {
-     static int speed;
-    /**
-     * Act - do whatever the Mover wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    static int speed = 4;
+    static int speed2 = 6;
+    static int speed3 = 8;
+    static int speed4 = 10;
+    static int speed5 = 12;
     public void act(int speed) 
-    {
-        
-        
-        
+    {   
     } 
     
     public static int getSpeed()
@@ -26,7 +23,7 @@ public class Mover extends Actor
     
     public  void setSpeed(int speed)
     {
-        this.speed = 0;
+        this.speed = 5;
     }
     
     public void moveCar()
@@ -34,11 +31,21 @@ public class Mover extends Actor
         move(speed);
     }
     
-    public void atEdge()
+     public boolean atWorldEdge()
     {
-      if (getX() <= 5 || getX() >= getWorld() . getWidth() -5)  
-        {  
-            turn(180);  
-         }  
+        if(getX() < 20 || getX() > getWorld().getWidth() - 20)
+            return true;
+        if(getY() < 20 || getY() > getWorld().getHeight() - 20)
+            return true;
+        else
+            return false;
     }
+    //public void atEdge()
+    //{
+     // if (getX() <= 5 || getX() >= getWorld() . getWidth() -5)  
+      //  {  
+     //       turn(180); 
+			 
+     //    }  
+    //}
 }
