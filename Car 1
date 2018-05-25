@@ -12,16 +12,20 @@ public class car1 extends Mover
      * Act - do whatever the car1 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void act(int speed) 
+    public void act() 
    {
-        super.speed = speed;
-        
-        speed = 5;
-  
-        moveCar();
-        
-        atEdge();
-        
+       move(speed);
+       turnAtEdge();
+       
+       
    
    }
+   
+   public void turnAtEdge()
+    {
+        if(atWorldEdge() )
+        {
+             turn(180);
+        }
+    } 
 }
