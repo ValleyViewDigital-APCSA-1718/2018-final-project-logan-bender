@@ -40,6 +40,32 @@ public class Mover extends Actor
         else
             return false;
     }
+    
+    public void enemy()
+   {
+       Actor Frog;
+       Frog = getOneObjectAtOffset(0, 0, Frog.class);
+       if(Frog != null)
+    {
+        World world;
+        world = getWorld();
+        world.removeObject(Frog);
+        
+    }
+       //if(isTouching(Frog.class))
+        //{
+            //removeTouching(Frog.class);
+            //livesDown();
+        //}
+    }
+    public void goalReach()
+    {
+        if(isTouching(Frog.class))
+        {
+            removeTouching(Frog.class);
+            ((Road)getWorld()).levels();
+        }
+    }
     //public void atEdge()
     //{
      // if (getX() <= 5 || getX() >= getWorld() . getWidth() -5)  
