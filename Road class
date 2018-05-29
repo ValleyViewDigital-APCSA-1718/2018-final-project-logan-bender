@@ -8,12 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Road extends World
 {
-    private int level = 1;
-    private static int lives = 5;
-    private int score = 0;
+    public int level = 1;
+    public int lives = 5;
+    public int score = 0;
     Frog frog = new Frog();
-    
-    
+    GreenfootImage image = this.getBackground();
+    GreenfootImage background = this.getBackground();
     
     
    
@@ -26,7 +26,7 @@ public class Road extends World
     }
     public void build()
     {
-        addObject(new Frog(), 400, 585);
+        spawnFrog();
         addObject(new car1(), Greenfoot.getRandomNumber(700)+50, 511);
         addObject(new car1(), Greenfoot.getRandomNumber(700)+50, 460);
         addObject(new var2(), Greenfoot.getRandomNumber(700)+50, 344);
@@ -36,14 +36,38 @@ public class Road extends World
         addObject(new car4(), Greenfoot.getRandomNumber(700)+50, 159);
         addObject(new car5(), Greenfoot.getRandomNumber(700)+50, 61);
         addObject(new Goal(), 400, 17);
-        GreenfootImage image = this.getBackground();
-        image.drawString("LEVEL:  " + level, 720, 560);
-        image.drawString("LIVES:  " + lives, 720, 580);
+       
+        text();
+        //GreenfootImage image = this.getBackground();
+        //image.drawRect(700, 500, 100, 50);
+        //image.fillRect(700, 500, 100, 50);
+        //image.setColor(Color.BLACK);
+        //image.drawString("LEVEL:  " + level, 720, 520);
+        //image.drawString("LIVES:  " + lives, 720, 530);
+        //image.drawString("Score:  " + score, 720, 540);
+        
         
     }
+    public void spawnFrog()
+    {
+        addObject(new Frog(), 400, 585);
+    }
+    public void text()
+    {       
+         GreenfootImage background = new GreenfootImage("Road.png");
+        setBackground(background);
+        image = this.getBackground();
+        image.drawString("LEVEL:  " + level, 720, 560);
+        image.drawString("LIVES:  " + lives, 720, 570);
+        image.drawString("Score:  " + score, 720, 580);
+    }
+    
     public void levels()
     {
         level = level + 1;
+        score = 50 * level;
+        
+        
         if (level %5 == 0)
             {
                 lives = lives ++;
@@ -53,24 +77,34 @@ public class Road extends World
         
     }
     
-   public static void livesDown()
+   public  void livesDown()
     {
         lives = lives - 1;
-        
-        //if (lives == 0)
-        //{
-           // gameOver();
-        //}
-        //else
-        //{
-            //
-        //}
-        
-        
+        if (lives == 0)
+        {
+            gameOver();
+        }
+        else
+        {
+        spawnFrog();
+        text();
     }
-   /** public static void gameOver(String[] args)
+    }
+   public void gameOver()
     {
-        int[][] scoreBoard = new int[2][5];
+        removeObjects(getObjects(Frog.class));
+        removeObjects(getObjects(car1.class));
+        removeObjects(getObjects(var2.class));
+        removeObjects(getObjects(var3.class));
+        removeObjects(getObjects(car4.class));
+        removeObjects(getObjects(car5.class));
+        level = 1;
+        lives = 5;
+        build();
+        
+        
+        
+        /**int[][] scoreBoard = new int[2][5];
         for (int j = 0; j < 5; j++)
         {
             if (score >= scoreBoard[1][j])
@@ -79,6 +113,7 @@ public class Road extends World
             }
             
         }
+        */
     }
-    */
+  
 }
