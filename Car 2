@@ -16,7 +16,7 @@ public class var2 extends Mover
    {
        move(speed2);
        turnAtEdge();
-       
+       enemy();
        
    
    }
@@ -29,4 +29,3 @@ public class var2 extends Mover
         }
     } 
 }
-
