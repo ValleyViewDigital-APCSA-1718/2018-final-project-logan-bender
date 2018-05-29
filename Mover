@@ -50,6 +50,7 @@ public class Mover extends Actor
         World world;
         world = getWorld();
         world.removeObject(Frog);
+        ((Road)getWorld()).livesDown();
         
     }
        //if(isTouching(Frog.class))
