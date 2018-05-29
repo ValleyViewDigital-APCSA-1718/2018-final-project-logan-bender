@@ -34,4 +34,3 @@ public class Frog extends Mover
         }
     }    
 }
-
