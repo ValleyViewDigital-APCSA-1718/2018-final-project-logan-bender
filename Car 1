@@ -16,6 +16,7 @@ public class car1 extends Mover
    {
        move(speed);
        turnAtEdge();
+       enemy();
        
        
    
