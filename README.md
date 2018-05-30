@@ -3,7 +3,9 @@ Greenfoot game
 ## How To Play
 
 Step 1: Hit the run button to start the game.
+
 Step 2: Use the Arrow keys to make the frog move across the game board.
+
 Step 3: Avoid the cars and cross the road to get to the safe areas.
 
 To beat the level, the play must reach the goal represented by the Pink Orb at the top center of the screen. 
