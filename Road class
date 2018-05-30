@@ -38,24 +38,18 @@ public class Road extends World
         addObject(new Goal(), 400, 17);
        
         text();
-        //GreenfootImage image = this.getBackground();
-        //image.drawRect(700, 500, 100, 50);
-        //image.fillRect(700, 500, 100, 50);
-        //image.setColor(Color.BLACK);
-        //image.drawString("LEVEL:  " + level, 720, 520);
-        //image.drawString("LIVES:  " + lives, 720, 530);
-        //image.drawString("Score:  " + score, 720, 540);
+       
         
         
     }
     public void spawnFrog()
     {
-        addObject(new Frog(), 400, 585);
+        addObject(new Frog(), 400, 585); //simple method to help spawn frog when life lost.
     }
     public void text()
     {       
-         GreenfootImage background = new GreenfootImage("Road.png");
-        setBackground(background);
+         GreenfootImage background = new GreenfootImage("background_frogger.png");
+        setBackground(background); 
         image = this.getBackground();
         image.drawString("LEVEL:  " + level, 720, 560);
         image.drawString("LIVES:  " + lives, 720, 570);
@@ -70,10 +64,10 @@ public class Road extends World
         
         if (level %5 == 0)
             {
-                lives = lives ++;
+                lives = lives ++; //gives the player a chance to gain another life
             }
-       //Greenfoot.setWorld(new Road());
-       build();
+       
+       build(); //adds the extra cars and respawns frog.
         
     }
     
